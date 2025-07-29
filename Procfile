@@ -1,1 +1,0 @@
-web: cd src && waitress-serve --listen=0.0.0.0:$PORT cfehome.wsgi:application
