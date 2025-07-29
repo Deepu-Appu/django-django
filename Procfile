@@ -1,1 +1,1 @@
-web: gunicorn cfehome.wsgi:application --chdir src
+web: gunicorn src.cfehome.wsgi:application
