@@ -33,6 +33,7 @@ DEBUG = config("DJANGO_DEBUG", cast=bool, default=True)
 ALLOWED_HOSTS = [
     # "first-domain.page.gd",
     # "www.first-domain.page.gd",
+    "django-django-production-ec73.up.railway.app",
     "127.0.0.1",
     "0.0.0.0",
     ".railway.app",
