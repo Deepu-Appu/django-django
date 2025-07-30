@@ -22,6 +22,8 @@ REPO_DIR = BASE_DIR.parent
 TEMPLATES_DIR = BASE_DIR / "templates"
 TEMPLATES_DIR.mkdir(parents=True, exist_ok=True)
 
+PROJECT_NAME = config("PROJECT_NAME", default="Unset Project Name")
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
@@ -135,7 +137,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
