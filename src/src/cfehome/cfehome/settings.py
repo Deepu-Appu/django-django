@@ -9,46 +9,24 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-from ctypes import cast
-from re import A
-from decouple import config
-from django.core.management.utils import get_random_secret_key
-import os
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-REPO_DIR = BASE_DIR.parent
-TEMPLATES_DIR = BASE_DIR / "templates"
-TEMPLATES_DIR.mkdir(parents=True, exist_ok=True)
 
-PROJECT_NAME = config("PROJECT_NAME", default="Unset Project Name")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('DJANGO_SECRET_KEY',cast=str, default=get_random_secret_key())
+SECRET_KEY = 'django-insecure-32zx^*f_%2u0h5xldhzg5&a!1@bfz&h&e2qh0^@lfmmu2hcgji'
+
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config("DJANGO_DEBUG", cast=bool, default=True)
+DEBUG = True
 
-ALLOWED_HOSTS = [
-    # "first-domain.page.gd",
-    # "www.first-domain.page.gd",
-    "django-django-production-ec73.up.railway.app",
-    "127.0.0.1",
-    "0.0.0.0",
-    ".railway.app",
-]
+ALLOWED_HOSTS = []
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://*.railway.app",
-]
-
-if DEBUG:
-    ALLOWED_HOSTS = ["*"]
-
-# CORS -> API
 
 # Application definition
 
@@ -76,7 +54,7 @@ ROOT_URLCONF = 'cfehome.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATES_DIR],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -101,17 +79,6 @@ DATABASES = {
     }
 }
 
-DATABASE_URL = config("DATABASE_URL", cast=str, default="")
-if DATABASE_URL:
-    import dj_database_url
-    if DATABASE_URL.startswith("postgres://") or DATABASE_URL.startswith(
-        "postgresql://"
-    ):
-        DATABASES = {
-            "default": dj_database_url.config(
-                default=DATABASE_URL,
-                )
-        }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -148,7 +115,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
