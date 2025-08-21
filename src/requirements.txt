@@ -3,3 +3,6 @@ python-decouple
 gunicorn 
 waitress 
 whitenoise
+dj-database-url
+psycopg[binary] # postgres-python v3
+psycopg2-binary

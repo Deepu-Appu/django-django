@@ -2,7 +2,7 @@ Django==5.2.4
 python-decouple
 gunicorn 
 waitress 
-whitenoise
+whitenoise[brotli]
 dj-database-url
 psycopg[binary] # postgres-python v3
 psycopg2-binary
